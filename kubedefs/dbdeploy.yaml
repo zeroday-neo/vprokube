@@ -32,7 +32,7 @@ spec:
       - name: vpro-db-data
         persistentVolumeClaim:
           claimName: db-pv-claim      
-      initcontainers:
+      initContainers:
       - name: busybox
         image: busybox:latest
         args: ["rm","-rf", "/var/lib/mysql/lost+found"]
