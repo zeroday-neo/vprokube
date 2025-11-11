@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: vproapp.rockyrohith.work.gd  # Replace with your domain or IP (e.g., vpro.example.com)
+  - host: cluster.rockyrohith.work.gd  # Replace with your domain or IP (e.g., vpro.example.com)
     http:
       paths:
       - pathType: Prefix
