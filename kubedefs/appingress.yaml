@@ -9,7 +9,19 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: a1a96d9e486014bd99713925915bc5f5-8b84f16ea20980e3.elb.us-east-1.amazonaws.com  # Replace with your domain or IP (e.g., vpro.example.com)
+  # Existing ELB DNS rule
+  - host: a1a96d9e486014bd99713925915bc5f5-8b84f16ea20980e3.elb.us-east-1.amazonaws.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: vproapp-service
+            port:
+              number: 8080
+  # New custom domain rule
+  - host: vprofile.rockyrohith.work.gd
     http:
       paths:
       - pathType: Prefix
